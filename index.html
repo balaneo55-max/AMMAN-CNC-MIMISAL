@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMMAN CNC</title>
+
+<style>
+*{box-sizing:border-box}
+body {margin:0;font-family:Arial, sans-serif;background:#000;color:#fff;}
+
+/* HEADER */
+header {background:rgba(0,0,0,0.7);padding:15px;text-align:center;position:sticky;top:0;z-index:1000;backdrop-filter: blur(6px);} 
+nav a {color:#fff;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav a:hover {color:#f5c542;}
+
+/* HERO WITH DARK OVERLAY */
+.hero {
+  position:relative;
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:url('images/banner.jpg') center/cover no-repeat;
+  transform:scale(1.05);
+  animation: zoomBg 12s ease-in-out infinite alternate;
+}
+.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.85));
+}
+
+/* HERO CONTENT */
+.hero-content{position:relative;z-index:2;max-width:900px;padding:0 20px;}
+
+.logo {
+  width:80px;height:80px;margin:0 auto 10px;
+  background:url('images/logo.png') center/contain no-repeat; /* optional logo */
+  filter: drop-shadow(0 0 12px rgba(255,200,80,0.7));
+  animation: float 4s ease-in-out infinite;
+}
+
+.title {
+  font-size:48px;font-weight:800;letter-spacing:2px;
+  background: linear-gradient(90deg,#ffd36b,#ffb300,#ffd36b);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  text-shadow: 0 0 10px rgba(255,190,60,0.6), 0 0 25px rgba(255,190,60,0.4);
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+.subtitle {font-size:20px;margin-top:10px;opacity:0.9}
+
+.cta {
+  margin-top:20px;
+  display:inline-block;
+  padding:12px 18px;
+  background:#25D366;color:#fff;border-radius:6px;text-decoration:none;font-weight:bold;
+  box-shadow:0 0 15px rgba(37,211,102,0.5);
+  transition:0.3s;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 0 25px rgba(37,211,102,0.8)}
+
+/* SECTIONS */
+.container {padding:30px 20px;max-width:1200px;margin:auto;}
+
+.products {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.product {background:#111;padding:15px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.4);text-align:center;transition:0.3s;}
+.product:hover{transform:translateY(-6px)}
+.product img {width:100%;border-radius:10px;}
+.product h3 {margin:10px 0;}
+
+.gallery {column-count:3;column-gap:15px;}
+.gallery img {width:100%;margin-bottom:15px;border-radius:10px;transition:0.3s;}
+.gallery img:hover {transform:scale(1.05)}
+@media(max-width:900px){.gallery{column-count:2}}
+@media(max-width:600px){.gallery{column-count:1}}
+
+.video-gallery {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
+.video-gallery video {width:100%;border-radius:10px;}
+
+.footer {background:#111;color:#aaa;text-align:center;padding:20px;margin-top:30px;}
+
+/* ANIMATIONS */
+@keyframes glow{
+  from{ text-shadow:0 0 8px rgba(255,190,60,0.5), 0 0 18px rgba(255,190,60,0.3);} 
+  to{ text-shadow:0 0 18px rgba(255,190,60,0.9), 0 0 35px rgba(255,190,60,0.6);} 
+}
+@keyframes zoomBg{from{transform:scale(1.05)} to{transform:scale(1.15)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>AMMAN CNC</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#videos">Videos</a>
+<a href="#location">Location</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="logo"></div>
+    <div class="title">AMMAN CNC</div>
+    <div class="subtitle">Precision Wood Carving • Custom Designs</div>
+    <a class="cta" href="https://wa.me/919842041514" target="_blue">Chat on WhatsApp</a>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="container" id="products">
+<h2>Our Designs</h2>
+<div class="products">
+<div class="product"><img src="images/product1.jpg"><h3>border Wood Carving </h3></div>
+<div class="product"><img src="images/product2.jpg"><h3>2D CNC Artwork</h3></div>
+<div class="product"><img src="images/product3.jpg"><h3>3D CNC Artwork</h3></div>
+</div>
+</div>
+
+<!-- GALLERY -->
+<div class="container" id="gallery">
+<h2>Wood Carving Gallery</h2>
+<div class="gallery">
+<img src="images/carving1.jpg">
+<img src="images/carving2.jpg">
+<img src="images/carving3.jpg">
+<img src="images/carving4.jpg">
+<img src="images/carving5.jpg">
+<img src="images/carving6.jpg">
+</div>
+</div>
+
+<!-- VIDEO -->
+<div class="container" id="videos">
+<h2>Work Videos</h2>
+<div class="video-gallery">
+<video autoplay muted loop playsinline><source src="videos/work1.mp4" type="video/mp4"></video>
+<video autoplay muted loop playsinline><source src="videos/work2.mp4" type="video/mp4"></video>
+<video autoplay muted loop playsinline><source src="videos/work3.mp4" type="video/mp4"></video>
+</div>
+</div>
+
+<!-- LOCATION -->
+<div class="container" id="location">
+<h2>Our Location</h2>
+<iframe src="https://www.google.com/xvC7qGpxfYiiiWxG8&output=embed" width="100%" height="300" style="border:0;"></iframe>
+</div>
+
+<!-- CONTACT -->
+<div class="container" id="contact">
+<h2>Contact Us</h2>
+<p>WhatsApp: +91 6380969787</p>
+<p>WhatsApp: +91 9842041514</p>
+<p>Email: BALANEO55@Gmail.com</p>
+</div>
+
+<div class="footer">
+<p>© 2026 AMMAN CNC • Premium Portfolio</p>
+</div>
+
+</body>
+</html>
